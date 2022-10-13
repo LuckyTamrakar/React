@@ -4,7 +4,7 @@ import { useDjangoQuizQuery } from '../Services/userAuthApi'
 import { useDispatch } from 'react-redux';
 import { setUserToken } from '../Features/AuthSlice';
 
-import { RadioGroup,Typography,Checkbox,FormControlLabel, Box ,Alert,AlertTitle} from '@mui/material';
+import { Box ,Alert,AlertTitle} from '@mui/material';
 import Navbar from './Navbar';
 import { Link, useParams } from 'react-router-dom';
 import { getToken } from '../Services/LocalServices';
@@ -28,7 +28,7 @@ function DjangoQuiz() {
         
       }
   },[data])
-  const a=userData.data.flatMap((q)=>q)
+  
   //console.log(a)
   const b=userData.data.flatMap((q)=>q.answer)
   const ac=b.length
@@ -153,32 +153,7 @@ function DjangoQuiz() {
 </div>
       </>
   )
-   {/* {userData.data.map(({quiz,title,answer},i)=>(
-       <div key={i}>
-       <Typography component="h1" variant="h5">
-         {title}
-         
-       </Typography>
-       {answer.map(({ answer_text, id }) => (
-         <RadioGroup>
-           <FormControlLabel
-             control={
-               <Checkbox
-                 value={id}
-                 color="primary"
-                 
-               />
-             }
-             label={answer_text}
-           />
-         </RadioGroup>
-        
-       ))}
-       </div>
-    ))}
    
-  
-    </React.Fragment>*/}
   
 }
 
