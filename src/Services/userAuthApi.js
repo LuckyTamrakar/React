@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // Define a service using a base URL and expected endpoints
 export const userAuthApi = createApi({
   reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://multifunctionwebappapi.herokuapp.com/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://15.206.8.218:8000/' }),
   endpoints: (builder) => ({
     registerUser:builder.mutation({
         query:(user)=>{
